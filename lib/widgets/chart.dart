@@ -33,7 +33,7 @@ class Chart extends StatelessWidget {
         'day': DateFormat.E().format(weekday).substring(0, 1),
         'amount': totalsum
       };
-    });
+    }).reversed.toList();
   }
 
   double get totalSpendings {
@@ -55,7 +55,7 @@ class Chart extends StatelessWidget {
           children: groupedTransactionValues.map((data) {
             return Flexible(
               fit: FlexFit.tight,
-                  child: ChartBar(
+              child: ChartBar(
                   data['day'],
                   data['amount'],
                   totalSpendings == 0.0
